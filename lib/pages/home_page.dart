@@ -50,6 +50,7 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+            // NOTE : CONTENT
           ],
         ),
       ),
