@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_market/shared/theme.dart';
+import 'package:food_market/widgets/content_item.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -50,7 +51,30 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(
+              height: 48,
+            ),
             // NOTE : CONTENT
+            Container(
+              padding: const EdgeInsets.only(left: 24),
+              width: double.infinity,
+              height: 210,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: const [
+                  ContentItem(
+                    imageUrl: 'assets/img_food_1.png',
+                    name: 'Cherry Healthy',
+                    rating: 4,
+                  ),
+                  ContentItem(
+                    imageUrl: 'assets/img_food_2.png',
+                    name: 'Burger Tamayo',
+                    rating: 3,
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
