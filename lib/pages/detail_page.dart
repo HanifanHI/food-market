@@ -92,7 +92,7 @@ class DetailPage extends StatelessWidget {
                                   width: 10,
                                 ),
                                 Text(
-                                  '10',
+                                  '14',
                                   style: blackTextStyle.copyWith(
                                     fontSize: 16,
                                   ),
