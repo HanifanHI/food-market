@@ -1,10 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:food_market/pages/signin_page.dart';
 
 import '/shared/theme.dart';
-
-import 'home_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -20,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
       const Duration(seconds: 3),
       () => Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
         builder: (context) {
-          return const HomePage();
+          return const SigninPage();
         },
       ), (route) => false),
     );
