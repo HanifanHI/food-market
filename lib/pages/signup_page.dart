@@ -19,10 +19,13 @@ class SignupPage extends StatelessWidget {
               // NOTE : HEADER
               Row(
                 children: [
-                  const Icon(
-                    Icons.arrow_back_ios,
-                    color: cBlackColor,
-                    size: 24,
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      color: cBlackColor,
+                      size: 24,
+                    ),
                   ),
                   const SizedBox(
                     width: 26,
