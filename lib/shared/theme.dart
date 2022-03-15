@@ -8,6 +8,7 @@ const cWhiteColor = Color(0xFFFFFFFF);
 const cBackgroundColor = Color(0xFFBDFF00);
 const cRedColor = Color(0xFFD9435E);
 const cGreenColor = Color(0xFF1ABC9C);
+const cGreyLightColor = Color(0xFFF0F0F0);
 
 FontWeight medium = FontWeight.w500;
 FontWeight light = FontWeight.w300;
