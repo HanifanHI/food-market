@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:food_market/pages/signup_address_page.dart';
+import 'package:food_market/pages/signin_page.dart';
 import 'package:food_market/shared/theme.dart';
 
-class SignupPage extends StatelessWidget {
-  const SignupPage({Key? key}) : super(key: key);
+class SignupAddressPage extends StatelessWidget {
+  const SignupAddressPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,14 +34,14 @@ class SignupPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Sign Up',
+                        'Address',
                         style: blackTextStyle.copyWith(
                           fontSize: 22,
                           fontWeight: medium,
                         ),
                       ),
                       Text(
-                        'Register and eat',
+                        'Make sure it’s valid',
                         style: greyTextStyle.copyWith(
                           fontSize: 14,
                           fontWeight: light,
@@ -54,41 +54,44 @@ class SignupPage extends StatelessWidget {
               const SizedBox(
                 height: 74,
               ),
-              // NOTE : IMAGE PROFILE
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Image.asset(
-                    'assets/ic_ellipse.png',
-                    width: 110,
-                    height: 110,
+              // NOTE : FORM
+              // NOTE : PHONE NO.
+              Text(
+                "Phone No.",
+                style: blackTextStyle.copyWith(
+                  fontSize: 16,
+                ),
+              ),
+              const SizedBox(
+                height: 6,
+              ),
+              SizedBox(
+                width: double.infinity,
+                height: 40,
+                child: TextFormField(
+                  autocorrect: false,
+                  cursorColor: cBlackColor,
+                  keyboardType: TextInputType.number,
+                  textInputAction: TextInputAction.next,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    hintText: 'Type your phone number',
+                    hintStyle: greyTextStyle,
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 6,
+                      horizontal: 10,
+                    ),
                   ),
-                  Container(
-                    alignment: Alignment.center,
-                    height: 90,
-                    width: 90,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(90 / 2),
-                      color: cGreyLightColor,
-                    ),
-                    child: Text(
-                      'Add\nPhoto',
-                      style: greyTextStyle.copyWith(
-                        fontSize: 14,
-                        fontWeight: light,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  )
-                ],
+                ),
               ),
               const SizedBox(
                 height: 16,
               ),
-              // NOTE : FORM SIGN UP
-              // NOTE : FULL NAME
+              // NOTE : ADDRESS
               Text(
-                "Full Name",
+                "Address",
                 style: blackTextStyle.copyWith(
                   fontSize: 16,
                 ),
@@ -108,7 +111,7 @@ class SignupPage extends StatelessWidget {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    hintText: 'Type your full name',
+                    hintText: 'Type your address',
                     hintStyle: greyTextStyle,
                     contentPadding: const EdgeInsets.symmetric(
                       vertical: 6,
@@ -120,43 +123,9 @@ class SignupPage extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              // NOTE : EMAIL
+              // NOTE : HOUSE NO.
               Text(
-                "Email Address",
-                style: blackTextStyle.copyWith(
-                  fontSize: 16,
-                ),
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              SizedBox(
-                width: double.infinity,
-                height: 40,
-                child: TextFormField(
-                  autocorrect: false,
-                  cursorColor: cBlackColor,
-                  keyboardType: TextInputType.emailAddress,
-                  textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    hintText: 'Type your email address',
-                    hintStyle: greyTextStyle,
-                    contentPadding: const EdgeInsets.symmetric(
-                      vertical: 6,
-                      horizontal: 10,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              // NOTE : PASSWORD
-              Text(
-                "Password",
+                "House No.",
                 style: blackTextStyle.copyWith(
                   fontSize: 16,
                 ),
@@ -172,16 +141,54 @@ class SignupPage extends StatelessWidget {
                   cursorColor: cBlackColor,
                   keyboardType: TextInputType.text,
                   textInputAction: TextInputAction.done,
-                  obscureText: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    hintText: 'Type your password',
+                    hintText: 'Type your house number',
                     hintStyle: greyTextStyle,
                     contentPadding: const EdgeInsets.symmetric(
                       vertical: 6,
                       horizontal: 10,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              // NOTE : CITY
+              Text(
+                "City",
+                style: blackTextStyle.copyWith(
+                  fontSize: 16,
+                ),
+              ),
+              const SizedBox(
+                height: 6,
+              ),
+              SizedBox(
+                width: double.infinity,
+                height: 40,
+                child: TextFormField(
+                  autocorrect: false,
+                  cursorColor: cBlackColor,
+                  keyboardType: TextInputType.text,
+                  textInputAction: TextInputAction.done,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    hintText: 'Select your city',
+                    hintStyle: greyTextStyle,
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 6,
+                      horizontal: 10,
+                    ),
+                    suffixIcon: const Icon(
+                      Icons.keyboard_arrow_down,
+                      size: 24,
+                      color: cGreyColor,
                     ),
                   ),
                 ),
@@ -193,7 +200,7 @@ class SignupPage extends StatelessWidget {
               GestureDetector(
                 onTap: () => Navigator.pushAndRemoveUntil(context,
                     MaterialPageRoute(builder: (context) {
-                  return const SignupAddressPage();
+                  return const SigninPage();
                 }), (route) => false),
                 child: Container(
                   alignment: Alignment.center,
@@ -204,7 +211,7 @@ class SignupPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
-                    'Continue',
+                    'Sign Up Now',
                     style: blackTextStyle.copyWith(
                       fontWeight: medium,
                     ),
